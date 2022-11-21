@@ -1,20 +1,33 @@
 package com.hcl.springbootteachercrud.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.hcl.springbootteachercrud.dto.Teacher;
 
 public interface TeacherServiceInterface {
-	public Teacher saveTeacher(Teacher teacher);
+	Teacher saveTeacher(Teacher teacher);
 
-	public Teacher getById(int id);
+	Optional<Teacher> getById(int id);
 
-	public List<Teacher> getAll();
+	List<Teacher> getAll();
 
-	public Teacher updateTeacher(Teacher teacher,int id);
+	Teacher updateTeacher(Teacher teacher, int id);
+
+	void deleteById(int id);
+
+	List<Teacher> saveAll(List<Teacher> teachers);
+
+	List<Teacher> getByName(String name);
+
+	List<Teacher> getBySalaryGreaterThan(double salary);
+
+	List<Teacher> getByNameLike(String nam);
+
+	List<Teacher> getByNameNotLike(String name);
+
+	List<Teacher> getBySalaryLessThan(double salary);
 	
-	public void deleteById(int id);
-	
-	public List<Teacher> saveAll(List<Teacher> teachers);
+	List<Teacher> getByNameAndSalary(String name,double salary);
 
 }
