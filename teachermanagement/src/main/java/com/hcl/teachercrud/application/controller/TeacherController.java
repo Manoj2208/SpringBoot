@@ -103,10 +103,20 @@ public class TeacherController {
 	public List<Teacher> getByFnameStartsWith(@RequestParam String fname) {
 		return teacherServiceImpl.getByFnameStartsWith(fname);
 	}
-	
+
 	@GetMapping("/getbyrangesortwithfname")
-	public List<Teacher> getByRange(@RequestParam int pno,@RequestParam int psize){
+	public List<Teacher> getByRange(@RequestParam int pno, @RequestParam int psize) {
 		return teacherServiceImpl.getByRangeAndSorting(pno, psize);
+	}
+
+	@GetMapping("/getbyagein")
+	public List<Teacher> getByAgeIn(@RequestParam List<Integer> ages) {
+		return teacherServiceImpl.getByAgeIn(ages);
+	}
+
+	@GetMapping("/getbyagenotin")
+	public List<Teacher> getByAgeNotIn(@RequestParam List<Integer> ages) {
+		return teacherServiceImpl.getByAgeNotIn(ages);
 	}
 
 }

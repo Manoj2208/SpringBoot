@@ -38,7 +38,13 @@ public interface TeacherService {
 	List<Teacher> getByDojBetween(Date d1, Date d2);
 
 	List<Teacher> getByFnameStartsWith(String fname);
+
+	List<Teacher> getByRangeAndSorting(int pno, int psize);
+
+	List<Teacher> getByAgeIn(List<Integer> ages);
 	
-	List<Teacher> getByRangeAndSorting(int pno,int psize);
+	List<Teacher> getByAgeNotIn(List<Integer> ages);
+	
+	
 
 }

@@ -29,4 +29,7 @@ public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
 
 	List<Teacher> findByFirstNameStartingWith(String fname);
 
+	List<Teacher> findByAgeIn(List<Integer> ages);
+	
+	List<Teacher> findByAgeNotIn(List<Integer> ages);
 }

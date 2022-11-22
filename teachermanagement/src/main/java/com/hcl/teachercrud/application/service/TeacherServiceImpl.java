@@ -127,8 +127,20 @@ public class TeacherServiceImpl implements TeacherService {
 	@Override
 	public List<Teacher> getByRangeAndSorting(int pno, int psize) {
 		// TODO Auto-generated method stub
-		Pageable pageable=PageRequest.of(pno, psize,Sort.by(Direction.ASC, "firstName"));
+		Pageable pageable = PageRequest.of(pno, psize, Sort.by(Direction.ASC, "firstName"));
 		return teacherRepository.findAll(pageable).getContent();
+	}
+
+	@Override
+	public List<Teacher> getByAgeIn(List<Integer> ages) {
+		// TODO Auto-generated method stub
+		return teacherRepository.findByAgeIn(ages);
+	}
+
+	@Override
+	public List<Teacher> getByAgeNotIn(List<Integer> ages) {
+		// TODO Auto-generated method stub
+		return teacherRepository.findByAgeNotIn(ages);
 	}
 
 }
